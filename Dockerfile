@@ -1,5 +1,5 @@
 # setup
-FROM node
+FROM justadudewhohacks/opencv-nodejs
 WORKDIR /usr/src/app
 
 # install deps
@@ -8,4 +8,4 @@ RUN npm install
 
 # copy source and start
 COPY . .
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "start-app" ]

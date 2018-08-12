@@ -7,8 +7,11 @@
   "author": "Paul Vallis <vallis1@gmail.com>",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "babel src -d dist --no-comments --copy-files --ignore node_modules",
-    "start": "npm run build && node ."
+    "build-container": "docker build -t vallis/cv-playground .",
+    "run-container": "docker run vallis/cv-playground",
+    "start": "npm run build-container && npm run run-container",
+    "build-app": "babel src -d dist --no-comments --copy-files --ignore node_modules",
+    "start-app": "npm run build-app && node ."
   },
   "dependencies": {},
   "devDependencies": {
